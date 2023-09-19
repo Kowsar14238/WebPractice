@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment-4</title>
+
+        <style>
+            body{
+                background-color: rgb(40, 38, 38);
+                margin: 0;
+                padding: 0;
+            }
+            h1, p{
+                text-align: center;
+                background-color: #008080;
+                font-family:'Courier New', Courier, monospace;
+            }
+            p{
+                font-size: 30px;
+            }
+            table{
+                background-color: #000;
+                padding: 5px 2px 2px 2px;
+                margin: auto;
+            }
+            /* type="number", input spinner remove
+            input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }*/
+            td button{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                min-width: 100%;
+                border: none;
+                outline: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+            .zero-button{
+                border-radius: 30rem;
+                
+            }
+            #zero-text{
+                position: relative;
+                right: 30px;
+            }
+            .grey-button{
+                background-color: #bdc2c5;
+                color: #000;
+            }
+            .yellow-button{
+                background-color: #f39c12;
+                color: white;
+                font-size: 25px;
+            }
+            .light-black-button{
+                background-color: #34495e;
+                color: white;
+            }
+            td input{
+                max-width: 230px;
+                width: 100%;
+                height: 70px;
+                color: white;
+                background-color: transparent;
+                text-align: right;
+                font-size: 40px;
+                appearance: none;
+                outline: 0;
+                border: none;
+            }
+            td input::placeholder{
+                color: white;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        
+        <h1>Assignment-4</h1>
+        <p>Create a Calculator</p><br><br>
+
+        <table>
+
+            <tr>
+                <td colspan="4"><input id="result" type="number" placeholder="0" readonly></td>
+            </tr>
+            <div id="button">
+
+                <tr>
+                    <td><button class="grey-button" onclick="clearResult()">AC</button></td>
+                    <td><button class="grey-button" onclick="toggleSign()">+/-</button></td>
+                    <td><button class="grey-button" onclick="appendSymbol('%')">%</button></td>
+                    <td><button class="yellow-button" onclick="appendSymbol('/')">÷</button></td>
+                </tr>
+                <tr>
+                    <td><button class="light-black-button" onclick="appendSymbol('7')">7</button></td>
+                    <td><button class="light-black-button" onclick="appendSymbol('8')">8</button></td>
+                    <td><button class="light-black-button" onclick="appendSymbol('9')">9</button></td>
+                    <td><button class="yellow-button" onclick="appendSymbol('*')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button class="light-black-button" onclick="appendSymbol('4')">4</button></td>
+                    <td><button class="light-black-button" onclick="appendSymbol('5')">5</button></td>
+                    <td><button class="light-black-button" onclick="appendSymbol('6')">6</button></td>
+                    <td><button class="yellow-button" onclick="appendSymbol('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="light-black-button" onclick="appendSymbol('1')">1</button></td>
+                    <td><button class="light-black-button" onclick="appendSymbol('2')">2</button></td>
+                    <td><button class="light-black-button" onclick="appendSymbol('3')">3</button></td>
+                    <td><button class="yellow-button" onclick="appendSymbol('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="zero-button light-black-button" onclick="appendSymbol('0')"><span id="zero-text">0</span></button></td>
+                    <td><button class="light-black-button" onclick="appendSymbol('.')">.</button></td>
+                    <td><button class="yellow-button" onclick="calculate()">=</button></td>
+                </tr>
+
+            </div>
+
+        </table>
+
+        <script >
+
+            let expression = '';
+
+            function clearResult() {
+                expression = '';
+                document.getElementById('result').value = '';
+            }
+            function appendSymbol(symbol) {
+                expression += symbol;
+                document.getElementById('result').value = expression;
+            }
+            function toggleSign() {
+                if (expression[0] === '-') {
+                  expression = expression.slice(1);
+                } 
+                else {
+                  expression = '-' + expression;
+                }
+                document.getElementById('result').value = expression;
+            }
+            function calculate(){
+                let result = eval(expression);
+                document.getElementById('result').value = result;
+                expression = '';
+            }
+
+        </script>
+
+    </body>
+</html>
