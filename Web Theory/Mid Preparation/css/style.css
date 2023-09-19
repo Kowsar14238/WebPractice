@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align:center;
+    margin-top: 20;
+    background-color: aqua;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+.table-1{
+    height:100px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20;
+    border-collapse:collapse;
+}
+.table-2{
+    height:100px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20;
+}
+.table-3{
+    height:100px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20;
+    border-collapse:collapse;
+}
+
+/*--- Palindrome Checker ---*/
+.palindrome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: palevioletred;
+}
+.wrapper{
+    max-width: 500px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 20px 25px 15px;
+}
+.palindrome .wrapper header h2{
+    font-size: 27px;
+    font-weight: 500;
+}
+.palindrome .wrapper header p{
+    margin-top: 5px;
+    font-size: 18px;
+    color: blueviolet;
+}
+.palindrome .wrapper .inputs{
+    margin: 20px 0 27px;
+}
+.palindrome .wrapper .inputs input{
+    width: 100%;
+    height: 60px;
+    outline: none;
+    font-size: 19px;
+    padding: 0 17px;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+.palindrome .wrapper .inputs button{
+    width: 100%;
+    height: 56px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 5px;
+    background: green;
+}
+.info-txt{
+    font-size: 19px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+.info-txt span{
+    color: blueviolet;
+}
+
+
+
